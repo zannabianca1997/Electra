@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <iostream>
 
-#include "celltype.h"
-#include "cellarray.h"
+#include "field.hpp"
 
 /* main file of the project */
 
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-  cell arraytest = cellarray(100);
-  arraytest.data[5].Ex = 3;
-  arraytest.pos[2].x = 2.5;
-  cout << arraytest.data[5].Ex << " " << arraytest.pos[2].x << "\n";
+  field TestField(3);
+  unsigned int i;
+  cout << (TestField.lenght) << "\n";
+  cout << (i = TestField.index(5,4)) << "\n";
+  cout << (TestField.items.pos[i].x) << "\n";
   return 0;
 };
