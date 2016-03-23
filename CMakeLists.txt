@@ -8,3 +8,7 @@ include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 
 add_executable(Electra ${SOURCES})
+
+#c++ standard
+set_property(TARGET Electra PROPERTY CXX_STANDARD 11)
+set_property(TARGET Electra PROPERTY CXX_STANDARD_REQUIRED ON)
