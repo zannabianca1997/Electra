@@ -7,6 +7,7 @@ field::field(unsigned char set_log_dim)
   if(set_log_dim < 16)
   {
     log_dim = set_log_dim;
+    side = 1 << log_dim; //2^logdim
     lenght = 1 << (2 * log_dim); //(2^logdim)^2
     items.data = new celldata[lenght]; //alloca spazio per i dati
     items.pos = new cellpos[lenght]; //alloca spazio per le posizioni

@@ -10,6 +10,7 @@ public:
                         //max log_dim = 15
   unsigned int lenght; //il numero di celle
   unsigned int index(unsigned int, unsigned int); //l'indice alla cella x,y
+  unsigned int side;
   cell items; // i dati veri e propri
 private:
   unsigned char log_dim;

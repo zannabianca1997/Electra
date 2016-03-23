@@ -10,15 +10,18 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   try
   {
-    field TestField(16);
+    field TestField(15);
     unsigned int i;
-    cout << (TestField.lenght) << "\n";
-    cout << (i = TestField.index(5,4)) << "\n";
-    cout << (TestField.items.pos[i].x) << "\n";
+    cout << "Field side     : " << (TestField.side) << "\n";
+    cout << "Field dimension: " << (TestField.lenght) << "\n";
+    i = TestField.index(32767,32767);
+    cout << "Index of (32767, 32767): " <<  i << "\n";
+    cout << "value of (32767, 32767): " <<  (TestField.items.pos[i].x++ ) << "\n";
+    cout << "value of (32767, 32767): " <<  (TestField.items.pos[i].x++ ) << "\n";
   }
   catch(string s)
   {
-    cout << "error:" << s << "\n";
+    cout << "Error:" << s << "\n";
   };
   return 0;
 };
