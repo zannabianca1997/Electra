@@ -10,7 +10,7 @@ struct cellpos{ //the position in the simulation of the cell
   float x, y;
 };
 
-struct cell{
+struct cell{ //it will be used for cicles too
   cellpos* pos;
   celldata* data;
 };
