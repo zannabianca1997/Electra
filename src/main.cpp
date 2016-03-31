@@ -10,14 +10,25 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   try
   {
-    field TestField(15);
-    unsigned int i;
+    field TestField(4); //32 * 32
     cout << "Field side     : " << (TestField.side) << "\n";
     cout << "Field dimension: " << (TestField.lenght) << "\n";
-    i = TestField.index(32767,32767);
-    cout << "Index of (32767, 32767): " <<  i << "\n";
-    cout << "Value of (32767, 32767): " <<  (TestField.items.pos[i].x++ ) << "\n";
-    cout << "Value of (32767, 32767): " <<  (TestField.items.pos[i].x ) << "\n";
+    //iteriamo sull'array
+    cell Index = TestField.get_start_cell();
+    for(int i = 0; i < TestField.lenght; i++)
+    {
+      Index.pos->x = i;
+      Index.data->P = i*i;
+      cout << "Filled cell " << i << "\n";
+      MoveCell(Index); // avanziamo
+    }
+    //ripetiamo e scriviamo
+    Index = TestField.get_start_cell();
+    for(int i = 0; i < TestField.lenght; i++)
+    {
+      cout << "Cella numero: " << Index.pos->x << ", valore : " << Index.data->P << "\n" ;
+      MoveCell(Index); // avanziamo
+    }
   }
   catch(string s)
   {
