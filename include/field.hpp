@@ -12,6 +12,7 @@ public:
   unsigned int index(unsigned int, unsigned int); //l'indice alla cella x,y
   unsigned int side;
   cell items; // i dati veri e propri
+  cell get_end_cell(); //return last cell
 private:
   unsigned char log_dim;
 };
