@@ -17,14 +17,14 @@ struct cell{ //it will be used for cicles too
 
 //inline speeds up program... behave like macros
 //clone a cell
-inline cell CloneCell(cell Original)
+inline cell* CloneCell(cell* Original)
 {
-  cell NewCell;
-  NewCell.pos = Original.pos; NewCell.data = Original.data;
+  cell* NewCell = new cell;
+  NewCell->pos = Original->pos; NewCell->data = Original->data;
   return NewCell;
 }
 
 //move onward both cell pointers
-inline void MoveCell(cell Moving) { Moving.pos++; Moving.data++; };
+inline void MoveCell(cell* Moving) { Moving->pos++; Moving->data++; };
 
 #endif //ending the if

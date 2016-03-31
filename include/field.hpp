@@ -12,7 +12,7 @@ public:
   unsigned int index(unsigned int, unsigned int); //l'indice alla cella x,y
   unsigned int side;
   cell items; // i dati veri e propri
-  inline cell get_start_cell() { CloneCell(items); }; //return copy of start cell
+  inline cell* get_start_cell() { return CloneCell(&items); }; //return copy of start cell
 private:
   unsigned char log_dim;
 };

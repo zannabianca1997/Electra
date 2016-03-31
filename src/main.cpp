@@ -14,19 +14,18 @@ int main(int argc, char const *argv[]) {
     cout << "Field side     : " << (TestField.side) << "\n";
     cout << "Field dimension: " << (TestField.lenght) << "\n";
     //iteriamo sull'array
-    cell Index = TestField.get_start_cell();
-    for(int i = 0; i < TestField.lenght; i++)
+    cell* Index = TestField.get_start_cell();
+    for(int i = 0; i < TestField.lenght ; i++)
     {
-      Index.pos->x = i;
-      Index.data->P = i*i;
-      cout << "Filled cell " << i << "\n";
+      Index->pos->x = i;
+      Index->data->P = i*i;
       MoveCell(Index); // avanziamo
     }
     //ripetiamo e scriviamo
     Index = TestField.get_start_cell();
     for(int i = 0; i < TestField.lenght; i++)
     {
-      cout << "Cella numero: " << Index.pos->x << ", valore : " << Index.data->P << "\n" ;
+      cout << "Cella numero: " << Index->pos->x << ", valore : " << Index->data->P << "\n" ;
       MoveCell(Index); // avanziamo
     }
   }
