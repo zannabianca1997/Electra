@@ -63,7 +63,7 @@ namespace cells
     /*
     out_file.write((char*)&limits, sizeof(boundaries));
     out_file.write((char*)items.data, lenght*sizeof(celldata));
-    */
+    *
     in_file.close();
   };*/
 
