@@ -2,6 +2,7 @@
 #define FIELD_TYPE_INCLUDED
 
 #include "celltype.hpp"
+#include <string>
 
 namespace cells
 {
@@ -25,10 +26,13 @@ namespace cells
     cell items; // i dati veri e propri
     inline cell* get_start_cell() { return CloneCell(&items); }; //return copy of start cell
 
-    void to_file(char*); //save this array to a file
-    void from_file(char*);
+    void to_file(std::string); //save this array to a file
+    void from_file(std::string);
   private:
-    unsigned char log_dim;
+    unsigned char log_dim; //logaritmo in base 2 del lato
+    void fill_positions(); //assegna i valori ad ogni posizione
+
+    float dx, dy; //la larghezza delle celle sull'asse x e y
   };
 
 }
