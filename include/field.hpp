@@ -15,8 +15,17 @@ namespace cells
     unsigned int lenght; //il numero di celle
     unsigned int index(unsigned int, unsigned int); //l'indice alla cella x,y
     unsigned int side;
+
+    struct {
+      float xmin, xmax;
+      float ymin, ymax;
+    } boundaries; // i limiti della simulazione 
+
     cell items; // i dati veri e propri
     inline cell* get_start_cell() { return CloneCell(&items); }; //return copy of start cell
+
+    void to_file(char*); //save this array to a file
+    void from_file(char*);
   private:
     unsigned char log_dim;
   };
